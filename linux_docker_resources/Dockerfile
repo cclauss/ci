@@ -32,7 +32,18 @@ RUN curl --silent http://packages.osrfoundation.org/gazebo.key | apt-key add -
 RUN apt-get update && apt-get install --no-install-recommends -y build-essential ccache cmake pkg-config python3-empy python3-setuptools python3-vcstool
 
 # Install build and test dependencies of ROS 2 packages.
-RUN apt-get update && apt-get install --no-install-recommends -y clang-format-3.8 cppcheck git pydocstyle pyflakes python3-coverage python3-flake8 python3-mock python3-nose python3-pep8 python3-yaml uncrustify
+RUN apt-get update && apt-get install --no-install-recommends -y clang-format-3.8
+RUN apt-get update && apt-get install --no-install-recommends -y cppcheck
+RUN apt-get update && apt-get install --no-install-recommends -y git
+RUN apt-get update && apt-get install --no-install-recommends -y pydocstyle
+RUN apt-get update && apt-get install --no-install-recommends -y pyflakes
+RUN apt-get update && apt-get install --no-install-recommends -y python3-coverage
+RUN apt-get update && apt-get install --no-install-recommends -y python3-flake8
+RUN apt-get update && apt-get install --no-install-recommends -y python3-mock
+RUN apt-get update && apt-get install --no-install-recommends -y python3-nose
+RUN apt-get update && apt-get install --no-install-recommends -y python3-pep8
+RUN apt-get update && apt-get install --no-install-recommends -y python3-yaml
+RUN apt-get update && apt-get install --no-install-recommends -y uncrustify
 
 # Install and self update pip/setuptools to the latest version.
 RUN apt-get update && apt-get install --no-install-recommends -y python3-pip
