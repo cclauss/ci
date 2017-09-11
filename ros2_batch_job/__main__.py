@@ -75,7 +75,6 @@ def main(sysargv=None):
             'actionlib_msgs',
             'shape_msgs',
             'stereo_msgs',
-            'trajectory_msgs',
             'visualization_msgs'
         ]
         return run(args, build_and_test, blacklisted_package_names=blacklisted_package_names)
