@@ -74,7 +74,7 @@ def build_and_test_and_package(args, job):
                 ['--cmake-args', '-DCMAKE_BUILD_TYPE=' + args.cmake_build_type + ' --']
                 if args.cmake_build_type else []
             ) + [
-            '--make-flags', '-j1', '--'
+            '--make-flags', 'VERBOSE=1', '-j1', '--'
         ])
         print('# END SUBSECTION')
 
