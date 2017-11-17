@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   apt-transport-https
 
 # Add the ROS repositories to the apt sources list.
-RUN echo "deb http://repositories.ros.org/ubuntu/testing/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list
+RUN echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list
 RUN curl --silent http://repositories.ros.org/repos.key | apt-key add -
 
 # Add the OSRF repositories to the apt sources list.
