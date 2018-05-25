@@ -73,12 +73,11 @@ def build_and_test_and_package(args, job):
             '--base-paths', '"%s"' % args.sourcespace,
             '--build-base', '"%s"' % args.buildspace,
             '--install-base', '"%s"' % args.installspace,
-            '--cmake-args', '" -DBUILD_TESTING=1" " --no-warn-unused-cli"',
             '--packages-select', 'ros1_bridge',
             '--event-handlers', 'console_direct+',
         ] + (['--merge-install'] if not args.isolated else []) +
             (
-                ['--cmake-args', '" -DCMAKE_BUILD_TYPE=' +
+                ['--cmake-args', '" -DBUILD_TESTING=1" " --no-warn-unused-cli" " -DCMAKE_BUILD_TYPE=' +
                     args.cmake_build_type + '"']
                 if args.cmake_build_type else []
         ), env=env)
